@@ -10,7 +10,7 @@ HEADERS = {
 }
 
 def get_location_id():
-    res = requests.get(f"{SHOP_URL}/admin/api/2023-07/locations.json", headers=HEADERS)
+    res = requests.get(f"{SHOP_URL}/admin/api/2023-07/locations.json", headers=HEADERS, verify=False)
     return res.json()["locations"][0]["id"]
 
 def update_inventory(sku, quantity, location_id):
